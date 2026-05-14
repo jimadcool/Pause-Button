@@ -1,0 +1,16 @@
+using UnityEngine;
+
+public class PauseButton : MonoBehaviour
+{
+    // Call this from the Button OnClick() in the Inspector
+    public void OnButtonClick()
+    {
+        if (PauseManager.Instance == null)
+        {
+            Debug.LogWarning("[PauseButton] No PauseManager instance found in scene.");
+            return;
+        }
+
+        PauseManager.Instance.TogglePause();
+    }
+}
